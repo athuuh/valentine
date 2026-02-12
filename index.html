@@ -5,168 +5,181 @@
   <title>Happy Valentine’s Day ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Georgia", serif;
     }
 
     body {
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
       min-height: 100vh;
-      color: #fff;
+      background: linear-gradient(135deg, #ff4d6d, #ff85a2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
       overflow-x: hidden;
     }
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-
+    /* Floating hearts */
     .heart {
-      font-size: 3rem;
-      animation: beat 1s infinite;
-      margin-top: 20px;
+      position: fixed;
+      bottom: -20px;
+      font-size: 22px;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
     }
 
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
     }
 
-    section {
+    .container {
       background: rgba(255, 255, 255, 0.15);
-      margin: 40px auto;
-      padding: 40px 20px;
-      border-radius: 15px;
+      border-radius: 25px;
+      padding: 50px 30px;
       max-width: 900px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      z-index: 1;
     }
 
-    section h2 {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
+    h1 {
+      font-size: 3rem;
       margin-bottom: 20px;
     }
 
-    section p {
-      text-align: center;
-      font-size: 1.1rem;
+    .main-heart {
+      font-size: 2.5rem;
+      margin: 15px 0 25px;
+    }
+
+    p {
+      font-size: 1.2rem;
       line-height: 1.8;
+      margin-bottom: 30px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .gallery div {
-      background: rgba(255, 255, 255, 0.25);
-      height: 200px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .signature {
+      margin-top: 25px;
       font-size: 1.1rem;
-      font-style: italic;
     }
 
-    .proposal {
-      text-align: center;
-      margin-top: 30px;
+    .question {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 25px;
     }
 
-    .proposal button {
-      background: #fff;
-      color: #ff4d6d;
-      border: none;
-      padding: 12px 30px;
-      font-size: 1rem;
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 35px;
       border-radius: 30px;
+      border: none;
+      font-size: 1rem;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
-    .proposal button:hover {
-      background: #ffe3ea;
+    .yes {
+      background: white;
+      color: #ff4d6d;
+      font-weight: bold;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      opacity: 0.9;
+    .yes:hover {
+      background: #ffe6ec;
+    }
+
+    .no {
+      background: #ff1e4d;
+      color: white;
+      position: relative;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
+  <div class="container">
     <h1>Happy Valentine’s Day</h1>
-    <p>
-      Every moment with you feels special, every smile feels magical,
-      and every heartbeat reminds me why I chose you.
-    </p>
-    <div class="heart">❤️</div>
-  </header>
+    <div class="main-heart">❤️</div>
 
-  <section>
-    <h2>Why You Mean Everything to Me</h2>
     <p>
-      You are not just a part of my life, you are the reason my life feels complete.
-      Your presence brings peace to my chaos and joy to my ordinary days.
+      Dear Anandhu,<br>
+      Every moment with you feels special.<br>
+      You are my happiness, my calm,<br>
+      and the reason my heart smiles.
     </p>
-  </section>
 
-  <section>
-    <h2>Our Beautiful Moments</h2>
-    <div class="gallery">
-      <div>Our First Meet</div>
-      <div>Unforgettable Smiles</div>
-      <div>Endless Conversations</div>
-      <div>Forever Memories</div>
+    
+    <div class="question">
+      Will you be my Valentine?
     </div>
-  </section>
 
-  <section>
-    <h2>A Question from My Heart</h2>
-    <p>
-      On this Valentine’s Day, I want to ask you something that means the world to me.
-    </p>
-
-    <div class="proposal">
-      <button onclick="showMessage()">Will You Be My Valentine? 💖</button>
-      <p id="answer" style="margin-top:20px; font-size:1.2rem;"></p>
+    <div class="buttons">
+      <button class="btn yes" onclick="goToHeart()">Yes 💕</button>
+      <button class="btn no" id="noBtn">No 💔</button>
     </div>
-  </section>
-
-  <footer>
-    Made with love ❤️ | Valentine’s Day Special
-  </footer>
+  </div>
 
   <script>
-    function showMessage() {
-      document.getElementById("answer").innerHTML =
-        "Thank you for making my world brighter. Today and always, it’s you. 💕";
+    /* NO button movement */
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseenter", moveNo);
+    noBtn.addEventListener("click", moveNo);
+
+    function moveNo() {
+      const x = Math.random() * 300 - 150;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
     }
+
+    function goToHeart() {
+      window.location.href = "heart.html";
+    }
+
+    /* Floating hearts creation */
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 10 + 16) + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }, 600);
   </script>
 
 </body>

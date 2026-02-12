@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>From My Heart ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff85a2, #ff4d6d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 22px;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+      padding: 50px 30px;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .photo-btn {
+      padding: 14px 35px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      background: white;
+      color: #ff4d6d;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .photo-btn:hover {
+      background: #ffe6ec;
+    }
+
+    .photo {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .photo img {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<audio id="bgMusic" loop>
+  <source src="music.MPEG" type="audio/mpeg">
+</audio>
+
+  <div class="container">
+    <h1>From My Heart ❤️</h1>
+<p>
+
+  Thank you for accepting my proposal and choosing my heart.<br>
+  In this moment, my world feels complete and beautifully calm.<br><br>
+
+  Your “yes” is not just an answer,<br>
+  it is a promise of smiles, trust, and togetherness.<br><br>
+
+  I promise to stand by you in every season of life,<br>
+  to care, to support, and to love you endlessly.
+</p>
+
+
+    <p>
+      Koche,<br>
+      We have faced many challenges, yet you chose to stay instead of leaving. That choice means everything to me. I am truly grateful to have you by my side.
+
+Happy Valentine’s Day.
+
+    </p>
+
+    <button class="photo-btn" onclick="showPhoto()">Click to see us 💞</button>
+
+    <div class="photo" id="photoBox">
+      <!-- Replace photo.jpg with your image file -->
+      <img src="heartphoto.JPEG" alt="Our Photo">
+    </div>
+
+    <div class="signature">
+      With all my love,<br>
+      Kathuu ❤️
+    </div>
+  </div>
+
+ <script>
+  /* Show photo on button click */
+  function showPhoto() {
+    document.getElementById("photoBox").style.display = "block";
+  }
+
+  /* Floating hearts creation */
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 10 + 16) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 10000);
+  }, 600);
+
+  /* Background music */
+  window.onload = function () {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.5;
+
+    const playPromise = music.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        document.body.addEventListener(
+          "click",
+          () => {
+            music.play();
+          },
+          { once: true }
+        );
+      });
+    }
+  };
+</script>
+
+
+</body>
+</html>
